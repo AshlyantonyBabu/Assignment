@@ -127,7 +127,7 @@ function marksheet()
         else if(percent[i]>=55){ grad="D+";grade[i]=grad;}
         else if(percent[i]>=50){ grad="E";grade[i]=grad;}
         else if(percent[i]<=50){ grad="F";grade[i]=grad; count=1;}
-        else{grad="error" ;grade[i]=grad;}
+        else{grad="ABSENT" ;grade[i]=grad; count=1;}
        
     
     
@@ -215,7 +215,31 @@ function pattmach(){
         alert("First two letters should be uppercase alphbet and  last 3 letters should be digit " );
     }
     }
-
+    function validatemark()
+    {
+        var input=document.frm.n.value;
+           var x= document.frm.ss1.value;
+           var y=document.frm.mm1.value;
+           console.log(x);
+           if(x==null||x==0)
+           
+             
+            {
+                alert("This field can't be blank ");
+           }
+           if(y==null||y==0)
+           {
+            alert("This field can't be blank ");
+           }
+        if(x>y)
+        {
+            alert("total mark should be grater than the mark obtained");
+        }
+        if(input==null||input==0)
+        {
+            alert("This field can't be blank ");
+        }
+    }
 
     function displ(){
        // document.getElementById("btn1").style.display="block";
