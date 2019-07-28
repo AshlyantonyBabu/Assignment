@@ -5,6 +5,7 @@ var grade=Array();
 var status1=Array();
 var SE_M=Array();
 var  letter=/^[A-Za-z]+$/;
+count=0;
 sem1=["C Programming","Discrete Mathematics","Applied Probability And Statistics","Principles Of Management","Digital Fundamentals","Programming Lab"];
 sem2=["Object Oriented Programming","Data Structures","Operating System","Computer Organization And Architecture","Operations Research","OO Programming Lab"];
 sem3=["Computer n/w","Software Engineering","Database Management S/m","Design and analysis algorithms","web programming","Database Lab"];
@@ -14,6 +15,8 @@ sem6=[" PROJECT AND VIVA VOCE"];
 
 function semestercall()
 {
+    document.getElementById("btn1").style.display="block";
+    document.getElementById("tb1").style.display="block";
    var s= document.getElementById("sem").value;
    if(s=="S1")
    {
@@ -98,7 +101,7 @@ function clear()
 function marksheet()
 {
    
-    add=0;
+    add=0; m=" "
     for(var i=0;i<sem1.length;i++)
     {
         mark=parseInt(document.getElementById("s"+i).value); 
@@ -123,24 +126,22 @@ function marksheet()
         else if(percent[i]>=65){ grad="C";grade[i]=grad;}
         else if(percent[i]>=55){ grad="D+";grade[i]=grad;}
         else if(percent[i]>=50){ grad="E";grade[i]=grad;}
-        else if(percent[i]<=50){ grad="F";grade[i]=grad;}
+        else if(percent[i]<=50){ grad="F";grade[i]=grad; count=1;}
         else{grad="error" ;grade[i]=grad;}
        
-    count=0;
     
-        if(grade[i]=="S"||grade[i]=="A+"||grade[i]=="A"||grade[i]=="B+"||grade[i]=="B"||grade[i]=="C"||grade[i]=="C+"||grade[i]=="D+"||grade[i]=="E"){
+    
+        if(grad=="S"||grad=="A+"||grad=="A"||grad=="B+"||grad=="B"||grad=="C"||grad=="C+"||grad=="D+"||grad=="E"){
             console.log("passed");  
-              count++;
-          s="PASSED"
-           status1[i]=s;
+          console.log(count);
+           
         }
         else
         {
-            s="FAILED";
-             status1[i]=s;
-             count--;
+           
            console.log("failed");    
-        }
+      }
+ 
        name= document.getElementById("nam1").value;
         document.getElementById("n2").innerHTML=name;
         sme= document.getElementById("sem").value;
@@ -148,18 +149,11 @@ function marksheet()
         ex= document.getElementById("examcode1").value;
         document.getElementById("ex1").innerHTML=ex;
   
-   if(count==6)
-   {
-    m="PASSED";
-document.getElementById("ll").innerHTML=m;
-   }
-    else{
-        m="FAILED";
-document.getElementById("ll").innerHTML=m;
-    }
+   
+    
     }
     f=mark_array.length;
-    console.log(f)
+    //console.log(f)
     for(l=0;l<f;l++)
     {
         g = grade[l]+"<br>";
@@ -170,28 +164,32 @@ document.getElementById("ll").innerHTML=m;
          document.getElementById("ma"+l).innerHTML=m1;
          document.getElementById("tt"+l).innerHTML=t;
          document.getElementById("gd"+l).innerHTML=g;
-
+         if(count==1)
+         {
+            m="FAILED";
+            document.getElementById("ll44").innerHTML=m;
+          
+         }
+          else{
+           
+            m="PASSED";
+            document.getElementById("ll44").innerHTML="PASSED";
+          console.log("pa");
+          }
 
     }
    
 } 
 function validate(){
-    var input=document.frm.n.value;
-    var s=document.frm.semm.value;
-    var i=document.frm.ex.value;
+    //var inpu=document.frm.n.value;
+    //var s=document.frm.semm.value;
+    var inn=document.frm.ex.value;
     
-    if(input==null||input==" ")
+    if(inn==null||inn==" ")
     {
         alert("This Field is Mandatory");
     }
-    if(s==null||s==" ")
-    {
-        alert("This Field is Mandatory");
-    }
-    if(i==null||i==" ")
-    {
-        alert("This Field is Mandatory");
-    }
+    
 }
 function pattmach(){
     var input=document.frm.n.value;
@@ -217,17 +215,9 @@ function pattmach(){
         alert("First two letters should be uppercase alphbet and  last 3 letters should be digit " );
     }
     }
-function valmark(mark2)
-{
-    var m=parseInt(mark2);
-    if(isNaN(m))
-    {
-        alert("This field should be a Number");
-    }
 
-}
 
     function displ(){
-        document.getElementById("btn1").style.display="block";
+       // document.getElementById("btn1").style.display="block";
         document.getElementById("di").style.display="block";
     }
