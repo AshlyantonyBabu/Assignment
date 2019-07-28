@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mark sheet</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+    .borderless td, .borderless th ,.nobd
+	{
+    border: none;
+}
+
+
+.div3,.div2{
+    padding: 5px;
+    border: 2px solid black;
+   
+}
+
+
+</style>
+</head>
+<body>
+    
+    <script src="./cal.js">
+        </script>
+    <form id="frm1" name="frm">
+        <div class="form-group">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-12 col-sm-12">
+                        <div class="divv">
+                    <div class="col col-12 col-sm-6">
+                        <table class="table borderless">
+                            <tr>
+                                    <td>
+                            
+                       
+                        <label for="" id="lb1" class="control-label">Name</label></td>
+                        <td><input type="text" class="form-control" id="nam1" name="n" onblur="validate();pattmach();" ></td>
+                    </tr>
+                    <tr>
+                       <td> <label for="" class="control-label">Semster</label></td>
+                       <td> <select name="" id="sem" class="semester" onchange="semestercall();" onblur="validate();" >
+                            <option value=""></option>
+                           <option value="S1">S1</option>
+                           <option value="S2">S2</option>
+                           <option value="S3">S3</option>
+                           <option value="S4">S4</option>
+                           <option value="S5">S5</option>
+                           <option value="S6">S6</option>
+                          
+                       </select></td>
+                       <td>
+                            <label for="" class="control-label"required>Examcode</label>
+
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" id="examcode1" name="ex" onblur="validate();excode();">
+
+                        </td>
+
+
+                    </tr>
+                    </table>
+                    </div>
+                    <div class="col col-12 col-4"></div>
+                    <table class="table borderless">
+                        <thead>
+                            <tr><th>Course Name</th>
+                            <th>Mark</th>
+                        <th>
+                            Total Mark
+                        </th></tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                          <td><label for="" class="control-label" id="l0" style="display: none"></label></td>
+                       <td> <input type="text" class="form-control" id="s0" style="display: none"onblur="valmark(document.frm.m5);"></td>
+                       <td> <input type="text" class="form-control" id="mm0" style="display: none"onblur="valmark(document.frm.m5);"></td>
+                    
+                        
+                        
+                        </tr>
+                          <tr><td><label for="" class="control-label" id="l1" style="display: none"></label></td>
+                            <td> <input type="text" class="form-control" id="s1" style="display: none"onblur="valmark(document.frm.m5);"></td>
+                            <td> <input type="text" class="form-control" id="mm1" style="display: none"onblur="valmark(document.frm.m5);></td>
+                    
+                        
+                        </tr> 
+                          <tr><td><label for="" class="control-label" id="l2" style="display: none"></label></td>
+                            <td> <input type="text" class="form-control" id="s2" style="display: none"onblur="valmark(document.frm.m5);"></td>
+                            <td> <input type="text" class="form-control" id="mm2" style="display: none"onblur="valmark(document.frm.m5);"></td>
+                    
+                        
+                        </tr> 
+                           <tr><td><label for="" class="control-label" id="l3" style="display: none"></label></td>
+                            <td> <input type="text" class="form-control" id="s3" style="display: none"onblur="valmark(document.frm.m5);"></td>
+                            <td> <input type="text" class="form-control" id="mm3" style="display: none"onblur="valmark(document.frm.m5);"></td>
+                    
+                        
+                        </tr>
+                           <tr><td><label for="" class="control-label" id="l4" style="display: none"></label></td>
+                            <td> <input type="text" class="form-control" id="s4" style="display: none"onblur="valmark(document.frm.m5);"></td>
+                            <td> <input type="text" class="form-control" id="mm4" style="display: none"onblur="valmark(document.frm.m5);"></td>
+                    
+                        
+                        </tr>
+                           <tr><td><label for="" class="control-label" id="l5" style="display: none"></label></td>
+                            <td> <input type="text" name="s5"class="form-control" id="s5" style="display: none"onblur="valmark(document.frm.s5);"></td>
+                    
+                            <td> <input type="text" name="m5"class="form-control" id="mm5" style="display: none" onblur="valmark(document.frm.m5);"></td>
+
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                               
+                            </td>
+                            <td>
+                                    <button class="btn btn-primary"  value="Generate Marksheet" type="button" onclick="marksheet();validate();displ();">Generate Marksheet </button>
+
+                            </td>
+                        </tr>
+
+
+                      
+
+
+
+
+
+                    </tbody>
+                    </table>
+                </div>
+                    </div>
+                </div>
+                <div class="div2" style="display: none" id="di">
+                <div class="row">
+                    <div class="col col-12 col-sm-6 ">
+                
+                        
+                    <table class="table nobd" >
+                        <tr>
+                            <td></td>
+                            <td>
+                                <label for="" id="n1">NAME</label>
+
+                            </td>
+                            <td>
+                                <label for="" id="n2"></label>
+                            </td>
+                            <td>
+                                <label for="" id="sem">SEMESTER</label>
+
+                            </td>
+                            <td>
+                                <label for="" id="sem1"></label>
+                            </td>
+                            <td>
+                                <label for="" id="ex">EXAM CODE</label>
+
+                            </td>
+                            <td>
+                                <label for="" id="ex1"></label>
+                            </td>
+                            <td></td>
+                        </tr>
+                   
+                    </table>
+                
+                    </div>
+                </div>
+                    <div class="row "style="padding: 20px;">
+
+                    <div class="col col-12 col-6">
+                        
+                            <table class="table div3" >
+                        <tr>
+                            <td>
+                                <label for="" class="x">SUBJECTS</label>
+                            </td>
+                            <td>
+                                    <label for="" class="y">MARK</label>
+                            </td>
+                            <td>
+                                    <label for="" class="z">TOTAL MARK</label>
+                            </td>
+                            <td>
+                                    <label for="" class="w">GRADE</label>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>
+                                <label for="" id="ll0"></label><br>
+                                <label for="" id="ll1"></label><br>
+                                <label for="" id="ll2"></label><br>
+                                <label for="" id="ll3"></label><br>
+                                <label for="" id="ll4"></label><br>
+                                <label for="" id="ll5"></label><br>
+
+                            </td>
+                            <td>
+                                <label for="" id="ma0"></label><br>
+                                <label for="" id="ma1"></label><br>
+                                <label for="" id="ma2"></label><br>
+                                <label for="" id="ma3"></label><br>
+                                <label for="" id="ma4"></label><br>
+                                <label for="" id="ma5"></label><br>
+                            </td>
+                            <td>
+                                    <label for="" id="tt0"></label><br>
+                                    <label for="" id="tt1"></label><br>
+                                    <label for="" id="tt2"></label><br>
+                                    <label for="" id="tt3"></label><br>
+                                    <label for="" id="tt4"></label><br>
+                                    <label for="" id="tt5"></label><br>
+                                    
+                            
+                            </td>
+                            <td>
+                                    <label for="" id="gd0"></label><br>
+                                    <label for="" id="gd1"></label><br>
+                                    <label for="" id="gd2"></label><br>
+                                    <label for="" id="gd3"></label><br>
+                                    <label for="" id="gd4"></label><br>
+                                    <label for="" id="gd5"></label><br>
+                            
+                            </td>
+                        </tr>
+                        
+                        
+                    </table>
+               
+                                
+                        
+            </div>
+            </div>
+            <div class="row">
+                <div class="co col-4">
+                      
+                </div>
+                <div class="co col-4">
+                        <label for="" id="stt">STATUS</label>
+                    </div>
+                    <div class="col col-4">
+                            <label for="" id="ll"></label>
+                        </div>
+            </div>
+        </div>
+       </div>
+
+
+
+
+
+                </div>
+
+
+    </form>
+</body>
+</html>
