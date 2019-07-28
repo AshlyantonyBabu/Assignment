@@ -4,7 +4,7 @@ var percent=Array();
 var grade=Array();
 var status1=Array();
 var SE_M=Array();
-
+var  letter=/^[A-Za-z]+$/;
 sem1=["C Programming","Discrete Mathematics","Applied Probability And Statistics","Principles Of Management","Digital Fundamentals","Programming Lab"];
 sem2=["Object Oriented Programming","Data Structures","Operating System","Computer Organization And Architecture","Operations Research","OO Programming Lab"];
 sem3=["Computer n/w","Software Engineering","Database Management S/m","Design and analysis algorithms","web programming","Database Lab"];
@@ -177,14 +177,25 @@ document.getElementById("ll").innerHTML=m;
 } 
 function validate(){
     var input=document.frm.n.value;
+    var s=document.frm.semm.value;
+    var i=document.frm.ex.value;
     
     if(input==null||input==" ")
     {
         alert("This Field is Mandatory");
     }
+    if(s==null||s==" ")
+    {
+        alert("This Field is Mandatory");
+    }
+    if(i==null||i==" ")
+    {
+        alert("This Field is Mandatory");
+    }
 }
 function pattmach(){
-    var  letter=/^[A-Za-z]+$/;
+    var input=document.frm.n.value;
+    
       if(input.match(letter))
     {
         s=true;
@@ -208,7 +219,7 @@ function pattmach(){
     }
 function valmark(mark2)
 {
-    var m=mark2;
+    var m=parseInt(mark2);
     if(isNaN(m))
     {
         alert("This field should be a Number");
@@ -217,5 +228,6 @@ function valmark(mark2)
 }
 
     function displ(){
+        document.getElementById("btn1").style.display="block";
         document.getElementById("di").style.display="block";
     }

@@ -39,11 +39,11 @@
                             
                        
                         <label for="" id="lb1" class="control-label">Name</label></td>
-                        <td><input type="text" class="form-control" id="nam1" name="n" onblur="validate();pattmach();" ></td>
+                        <td><input type="text" class="form-control" id="nam1" name="n" onblur="pattmach();" ></td>
                     </tr>
                     <tr>
                        <td> <label for="" class="control-label">Semster</label></td>
-                       <td> <select name="" id="sem" class="semester" onchange="semestercall();" onblur="validate();" >
+                       <td> <select name="semm" id="sem" class="semester" onchange="semestercall();" //onblur="validate();" >
                             <option value=""></option>
                            <option value="S1">S1</option>
                            <option value="S2">S2</option>
@@ -58,7 +58,7 @@
 
                         </td>
                         <td>
-                            <input type="text" class="form-control" id="examcode1" name="ex" onblur="validate();excode();">
+                            <input type="text" class="form-control" id="examcode1" name="ex" onblur="excode();">
 
                         </td>
 
@@ -78,40 +78,40 @@
                         <tbody>
                         <tr>
                           <td><label for="" class="control-label" id="l0" style="display: none"></label></td>
-                       <td> <input type="text" class="form-control" id="s0" style="display: none"onblur="valmark(document.frm.m5);"></td>
-                       <td> <input type="text" class="form-control" id="mm0" style="display: none"onblur="valmark(document.frm.m5);"></td>
+                       <td> <input type="text" class="form-control" id="s0" name="ss0" style="display: none"//onblur="valmark(document.frm.ss0);"></td>
+                       <td> <input type="text" class="form-control" name="m0" id="mm0" style="display: none"//onblur="valmark(document.frm.m0);"></td>
                     
                         
                         
                         </tr>
                           <tr><td><label for="" class="control-label" id="l1" style="display: none"></label></td>
-                            <td> <input type="text" class="form-control" id="s1" style="display: none"onblur="valmark(document.frm.m5);"></td>
-                            <td> <input type="text" class="form-control" id="mm1" style="display: none"onblur="valmark(document.frm.m5);></td>
+                            <td> <input type="text" name="ss1" class="form-control" id="s1" style="display: none"//onblur="valmark(document.frm.ss1);"></td>
+                            <td> <input type="text"name="m1" class="form-control" id="mm1" style="display: none"//onblur="valmark(document.frm.m1);"></td>
                     
                         
                         </tr> 
                           <tr><td><label for="" class="control-label" id="l2" style="display: none"></label></td>
-                            <td> <input type="text" class="form-control" id="s2" style="display: none"onblur="valmark(document.frm.m5);"></td>
-                            <td> <input type="text" class="form-control" id="mm2" style="display: none"onblur="valmark(document.frm.m5);"></td>
+                            <td> <input type="text" name="ss2" class="form-control" id="s2" style="display: none"//onblur="valmark(document.frm.ss2);"></td>
+                            <td> <input type="text" name="m2" class="form-control" id="mm2" style="display: none"//onblur="valmark(document.frm.m2);"></td>
                     
                         
                         </tr> 
                            <tr><td><label for="" class="control-label" id="l3" style="display: none"></label></td>
-                            <td> <input type="text" class="form-control" id="s3" style="display: none"onblur="valmark(document.frm.m5);"></td>
-                            <td> <input type="text" class="form-control" id="mm3" style="display: none"onblur="valmark(document.frm.m5);"></td>
+                            <td> <input type="text"name="ss3" class="form-control" id="s3" style="display: none"//onblur="valmark(document.frm.ss3);"></td>
+                            <td> <input type="text"name="m3" class="form-control" id="mm3" style="display: none"//onblur="valmark(document.frm.m3);"></td>
                     
                         
                         </tr>
                            <tr><td><label for="" class="control-label" id="l4" style="display: none"></label></td>
-                            <td> <input type="text" class="form-control" id="s4" style="display: none"onblur="valmark(document.frm.m5);"></td>
-                            <td> <input type="text" class="form-control" id="mm4" style="display: none"onblur="valmark(document.frm.m5);"></td>
+                            <td> <input type="text"name="ss4" class="form-control" id="s4" style="display: none"//onblur="valmark(document.frm.ss4);"></td>
+                            <td> <input type="text" name="m4"class="form-control" id="mm4" style="display: none"//onblur="valmark(document.frm.m4);"></td>
                     
                         
                         </tr>
                            <tr><td><label for="" class="control-label" id="l5" style="display: none"></label></td>
-                            <td> <input type="text" name="s5"class="form-control" id="s5" style="display: none"onblur="valmark(document.frm.s5);"></td>
+                            <td> <input type="text" name="ss5"class="form-control" id="s5" style="display: none"//onblur="valmark(document.frm.ss5);"></td>
                     
-                            <td> <input type="text" name="m5"class="form-control" id="mm5" style="display: none" onblur="valmark(document.frm.m5);"></td>
+                            <td> <input type="text" name="m5"class="form-control" id="mm5" style="display: none" //onblur="valmark(document.frm.m5);"></td>
 
                         </tr>
 
@@ -121,7 +121,7 @@
                                
                             </td>
                             <td>
-                                    <button class="btn btn-primary"  value="Generate Marksheet" type="button" onclick="marksheet();validate();displ();">Generate Marksheet </button>
+                                    <button class="btn btn-primary" id="btn1" value="Generate Marksheet" type="button" onclick="marksheet();validate();displ();">Generate Marksheet </button>
 
                             </td>
                         </tr>
