@@ -134,11 +134,12 @@ function marksheet()
         if(grad=="S"||grad=="A+"||grad=="A"||grad=="B+"||grad=="B"||grad=="C"||grad=="C+"||grad=="D+"||grad=="E"){
             console.log("passed");  
           console.log(count);
+          count=0;
            
         }
         else
         {
-           
+            count=1;
            console.log("failed");    
       }
  
