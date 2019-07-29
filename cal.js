@@ -183,12 +183,17 @@ function marksheet()
 function validate(){
     //var inpu=document.frm.n.value;
     //var s=document.frm.semm.value;
-    var inn=document.frm.ex.value;
+    //var inn=document.frm.ex.value;
     
-    if(inn==null||inn==" ")
+    if(document.frm.ex.value==null||document.frm.ex.value==" ")
     {
         alert("This Field is Mandatory");
     }
+    if(document.frm.n.value==null||document.frm.n.value==" ")
+    {
+        alert("This Field is Mandatory");
+    }
+
     
 }
 function pattmach(){
