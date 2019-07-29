@@ -118,14 +118,14 @@ function marksheet()
             grade[i]=grad;
 
         }
-        else if(percent[i]>=90){  grad="A+";grade[i]=grad;}
-        else if(percent[i]>=85){ grad="A";grade[i]=grad;}
-        else if(percent[i]>=80){ grad="B+";grade[i]=grad;}
-        else if(percent[i]>=75){ grad="B";grade[i]=grad;}
-        else if(percent[i]>=70){ grad="C+";grade[i]=grad;}
-        else if(percent[i]>=65){ grad="C";grade[i]=grad;}
-        else if(percent[i]>=55){ grad="D+";grade[i]=grad;}
-        else if(percent[i]>=50){ grad="E";grade[i]=grad;}
+        else if(percent[i]>=90){  grad="A+";grade[i]=grad;count=0;}
+        else if(percent[i]>=85){ grad="A";grade[i]=grad;count=0;}
+        else if(percent[i]>=80){ grad="B+";grade[i]=grad;count=0;}
+        else if(percent[i]>=75){ grad="B";grade[i]=grad;count=0;}
+        else if(percent[i]>=70){ grad="C+";grade[i]=grad;count=0;}
+        else if(percent[i]>=65){ grad="C";grade[i]=grad;count=0;}
+        else if(percent[i]>=55){ grad="D+";grade[i]=grad;count=0;}
+        else if(percent[i]>=50){ grad="E";grade[i]=grad;count=0;}
         else if(percent[i]<=50){ grad="F";grade[i]=grad; count=1;}
         else{grad="ABSENT" ;grade[i]=grad; count=1;}
        
